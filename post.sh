@@ -13,7 +13,7 @@ ask_for_username()
 chown root:root /
 chmod 755 /
 
-xbps-install -Sy zsh zsh-completions git curl
+xbps-install -Sy zsh zsh-completions
 
 ask_for_username
 
@@ -40,7 +40,7 @@ sudo -u $user_name sudo xbps-install -Sy alsa-utils pulseaudio alsa-plugins-puls
 ln -s /etc/sv/alsa /var/service
 
 # Utils
-sudo -u $user_name sudo xbps-install -Sy curl git # Remote file tools
+sudo -u $user_name sudo xbps-install -Sy git # Remote file tools
 sudo -u $user_name sudo xbps-install -Sy ntfs-3g dosfstools exfat-utils unzip p7zip-unrar xar # Files/Filesystems
 sudo -u $user_name sudo xbps-install -Sy acpi # Hardware monitoring
 
@@ -126,5 +126,5 @@ chmod +x /home/$user_name/.local/bin/rbar
 sudo -u $user_name sudo xbps-remove -Oo
 
 rm /home/$user_name/.bash*
-rm -r
+rm -r *
 poweroff
