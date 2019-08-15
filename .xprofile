@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# This file is sourced when logging into a graphical session
+
+# Display arrangement
+xrandr --output eDP-1 --mode 1600x900 --pos 0x440 --rotate normal \
+       --output DP-2-1 --primary --mode 1920x1080 --pos 1600x0 --rotate normal \
+       --output DP-2-2 --mode 1920x1080 --pos 3520x0 --rotate normal &
+
+xset dpms 600 & # Screen timeout
+xautolock -secure -time 15 -locker slock & # Screen locker
+
+compton & 	# Compositor
+sxhkd &		# Keybinds
+dstat &		# dwm status bar
+
+# Set wallpaper
+#feh --bg-scale ~/images/wallpapers/
+
+# Move mouse to center of primary monitor
+xdotool mousemove --sync --screen DP-2-2 2560 540

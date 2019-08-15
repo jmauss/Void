@@ -1,0 +1,25 @@
+# The Simple X Hotkey Daemon is used to set keybindings for non-dwm commands.
+
+# Reload sxhkd
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+# WM control
+alt + shift + q
+	killall xinit
+
+# Audio
+XF86AudioMute
+	pactl set-sink-mute 0 toggle ; rbar
+XF86Audio{Raise,Lower}Volume
+	pactl set-sink-mute 0 false ; pactl set-sink-volume 0 {+,-}5% ; rbar
+
+# Programs
+alt + z
+	slock
+alt + x
+	env GTK_THEME=adwaita firefox
+alt + c
+	remmina -c ~/.local/share/remmina/group_rdp_workstation_390132547l-corp-mmi-net.remmina
+alt + w
+	env GTK_THEME=adwaita firefox --new-window https://webmail.midco.com

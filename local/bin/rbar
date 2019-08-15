@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+# Refresh dwm status
+pkill -SIGTRAP bash # dstat
+#kill "$(pstree -lp | grep -- bash | sed "s/.*sleep(\([0-9]\+\)).*/\1/")"
