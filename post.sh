@@ -66,7 +66,7 @@ chown -R $user_name:wheel /home/$user_name/
 
 # Install fonts
 cd /home/$user_name/.local/share/fonts/
-sudo -u $user_name git clone https://github.com/ZulwiyozaPutra/SF-Mono-Font
+sudo -u $user_name git clone https://github.com/jmauss/SF-Mono-Font
 
 curl -L -O https://developer.apple.com/fonts/downloads/SFPro.zip
 unzip SFPro.zip
