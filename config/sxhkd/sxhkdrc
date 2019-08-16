@@ -20,6 +20,6 @@ alt + z
 alt + x
 	env GTK_THEME=adwaita firefox
 alt + c
-	remmina -c ~/.local/share/remmina/group_rdp_workstation_390132547l-corp-mmi-net.remmina
+	remmina -c ~/.local/share/remmina/
 alt + w
-	env GTK_THEME=adwaita firefox --new-window https://webmail.midco.com
+	env GTK_THEME=adwaita firefox --new-window https://
