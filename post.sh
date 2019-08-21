@@ -33,7 +33,7 @@ sudo -u $user_name sudo xbps-install -Sy xf86-input-libinput sxhkd # Input
 sudo -u $user_name sudo xbps-install -Sy fontconfig font-awesome5 liberation-fonts-ttf noto-fonts-ttf noto-fonts-cjk noto-fonts-emoji # Fonts
 sudo -u $user_name sudo xbps-install -Sy compton dmenu feh # dwm utils
 sudo -u $user_name sudo xbps-install -Sy lxappearance gnome-themes-standard # Theming
-sudo -u $user_name sudo xbps-install -Sy make gcc pkg-config libXinerama-devel libXft-devel freetype-devel fontconfig-devel libX11-devel ncurses st-terminfo libXrandr-devel # Build tools 
+sudo -u $user_name sudo xbps-install -Sy make musl-devel tcc pkg-config libXinerama-devel libXft-devel freetype-devel fontconfig-devel libX11-devel ncurses st-terminfo libXrandr-devel # Build tools 
 
 # Audio
 sudo -u $user_name sudo xbps-install -Sy alsa-utils pulseaudio alsa-plugins-pulseaudio pulsemixer
