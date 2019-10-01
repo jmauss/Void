@@ -7,6 +7,8 @@ alt + Escape
 # WM control
 alt + shift + q
 	killall xinit
+alt + r
+        rbar
 
 # Audio
 XF86AudioMute
