@@ -111,6 +111,7 @@ curl https://raw.githubusercontent.com/jmauss/Void/master/.xinitrc -o /home/$use
 curl https://raw.githubusercontent.com/jmauss/Void/master/.xprofile -o /home/$user_name/.xprofile
 curl https://raw.githubusercontent.com/jmauss/Void/master/.zprofile -o /home/$user_name/.zprofile
 curl https://raw.githubusercontent.com/jmauss/Void/master/.zshrc -o /home/$user_name/.zshrc
+curl https://raw.githubusercontent.com/jmauss/Void/master/config/user-dirs.dirs -o /home/$user_name/.config/user-dirs.dirs
 curl https://raw.githubusercontent.com/jmauss/Void/master/config/compton/compton.conf -o /home/$user_name/.config/compton/compton.conf
 curl https://raw.githubusercontent.com/jmauss/Void/master/config/sxhkd/sxhkdrc -o /home/$user_name/.config/sxhkd/sxhkdrc
 curl https://raw.githubusercontent.com/jmauss/Void/master/local/bin/dstat -o /home/$user_name/.local/bin/dstat
