@@ -49,13 +49,13 @@ partition_disk()
     echo w # Write the partition table
     ) | fdisk "$DISK"
 
-    mkfs.vfat -F32 "${DISK}1"
+    mkfs.vfat -F32 "${DISK}p1"
 }
 
 crypt_setup()
 {
-    cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --hash sha512 --iter-time 5000 --use-random --batch-mode luksFormat "${DISK}2"
-    cryptsetup luksOpen "${DISK}2" crypt 
+    cryptsetup --verbose --cipher aes-xts-plain64 --key-size 512 --hash sha512 --iter-time 5000 --use-random --batch-mode luksFormat "${DISK}p2"
+    cryptsetup luksOpen "${DISK}p2" crypt 
 
     pvcreate /dev/mapper/crypt
     vgcreate void /dev/mapper/crypt
@@ -65,7 +65,7 @@ crypt_setup()
 
     mount /dev/mapper/void-root /mnt
     mkdir /mnt/boot
-    mount "${DISK}1" /mnt/boot
+    mount "${DISK}p1" /mnt/boot
 }
 
 system_install()
@@ -90,7 +90,7 @@ system_config()
     sed -i 's/#TIMEZONE="Europe\/Madrid"/TIMEZONE="America\/Chicago"/' /mnt/etc/rc.conf
     sed -i 's/#KEYMAP="es"/KEYMAP="us"/' /mnt/etc/rc.conf
 
-    DEVID=$(blkid -s UUID -o value "${DISK}1")
+    DEVID=$(blkid -s UUID -o value "${DISK}p1")
     sed -i "/^# <file system>/aUUID=$DEVID\t\t/boot\tvfat\trw,noatime,discard\t0\t2\n/dev/mapper/void-root\t/\text4\trw,noatime,discard\t0\t1" /mnt/etc/fstab
 
     mkdir -p /mnt/etc/xbps.d
