@@ -54,7 +54,7 @@ curl https://raw.githubusercontent.com/jmauss/Void/master/.zshrc -o /home/$user_
 
 # Fix Shortcuts
 mkdir -p /home/$user_name/.local/share/applications
-cp /usr/share/applications/{org.gnome.Cheese,yelp,org.freedesktop.IBus.Setup}.desktop /home/$user_name/.local/share/applicaitons/
+cp /usr/share/applications/{org.gnome.Cheese,yelp,org.freedesktop.IBus.Setup}.desktop /home/$user_name/.local/share/applications/
 echo "NoDisplay=true" | tee -a /home/$user_name/.local/share/applications/*.desktop
 
 # Fix permissions
