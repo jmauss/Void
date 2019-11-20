@@ -36,7 +36,7 @@ sudo -u $user_name sudo xbps-install -Sy git # Remote file tools
 sudo -u $user_name sudo xbps-install -Sy ntfs-3g dosfstools exfat-utils unzip p7zip-unrar # Files/Filesystems
 sudo -u $user_name sudo xbps-install -Sy neofetch # Command Line
 
-usermod -aG libvirt $user_name
+usermod -aG kvm $user_name
 
 # Services
 ln -s /etc/sv/libvirtd /var/service
