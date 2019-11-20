@@ -31,12 +31,13 @@ sudo -u $user_name sudo xbps-install -Sy fonts-roboto-ttf liberation-fonts-ttf n
 sudo -u $user_name sudo xbps-install -Sy papirus-icon-theme # Theming
 
 # Utils
-sudo -u $user_name sudo xbps-install -Sy baobab gnome-boxes gnome-calculator gnome-calendar gnome-disk-utility gnome-maps gnome-screenshot gnome-system-monitor gnome-terminal totem # Gnome
+sudo -u $user_name sudo xbps-install -Sy baobab gnome-calculator gnome-calendar gnome-disk-utility gnome-maps gnome-screenshot gnome-system-monitor gnome-terminal totem # Gnome
+sudo -u $user_name sudo xbps-install -Sy qemu virt-manager ebtables # Virtualization
 sudo -u $user_name sudo xbps-install -Sy git # Remote file tools
 sudo -u $user_name sudo xbps-install -Sy ntfs-3g dosfstools exfat-utils unzip p7zip-unrar # Files/Filesystems
 sudo -u $user_name sudo xbps-install -Sy neofetch # Command Line
 
-usermod -aG kvm $user_name
+usermod -aG libvirt $user_name
 
 # Services
 ln -s /etc/sv/libvirtd /var/service
