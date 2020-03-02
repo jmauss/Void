@@ -70,7 +70,7 @@ crypt_setup()
 
 system_install()
 {
-    export XBPS_ARCH=x86_64-musl && yes Y | xbps-install -Sy -R http://alpha.us.repo.voidlinux.org/current/musl -r /mnt base-system lvm2 cryptsetup grub-x86_64-efi void-repo-nonfree curl
+    export XBPS_ARCH=x86_64 && yes Y | xbps-install -Sy -R http://alpha.us.repo.voidlinux.org/current/ -r /mnt base-system lvm2 cryptsetup grub-x86_64-efi void-repo-nonfree curl
     xbps-install -Sy -R http://alpha.us.repo.voidlinux.org/current/musl/nonfree -r /mnt intel-ucode
     mount -t proc proc /mnt/proc
     mount -t sysfs sys /mnt/sys
